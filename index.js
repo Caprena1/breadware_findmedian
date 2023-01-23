@@ -71,7 +71,7 @@ function findMedian(array_int1, array_int2) {
         
     }
 }
-console.log(findMedian([array_int1, array_int2]))
+console.log(findMedian())
 
 
 
