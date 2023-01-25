@@ -9,7 +9,7 @@
 //Concatonate the two arrays, then sort the combined array(sortedArray)using an arrow function. 
 //To find the median, create another variable where we take the upper boundary + the 
 //lower boundary and divide it by 2. 
-//I BELIEVE THE RUNTIME COMPLEXITY SHOULD BE O(1)
+//I BELIEVE THE RUNTIME COMPLEXITY IS O(n)
 // const array_int1 = [10,20,30,40,51,61,71]
 // const array_int2 = [15,25,31,86,600,700,900]
 
@@ -51,15 +51,15 @@ function findMedian(array_int1, array_int2) {
         let array_int1_right = array_int1[i + 1]; 
         let array_int2_left = array_int2[j]; 
         let array_int2_right = array_int2[j + 1]; 
-        
+        console.log(array_int1_left / 2 + array_int1_right / 2)
         if(array_int1_left <= array_int2_right && array_int2_left <= array_int1_right) {
             //IF ODD
-            if(total % 2) {
+            if(total % 2 === 1) {
                 return(array_int1_right, array_int2_right);
             }
             //IF EVEN
-            else {
-                return(array_int1_left.max, array_int2_left.max + array_int1_right.min, array_int2_right.min) / 2;
+            else{
+                return(array_int1_left, array_int2_left + array_int1_right, array_int2_right) / 2;
             }
         }
         else if(array_int1_left > array_int2_right){
@@ -68,10 +68,10 @@ function findMedian(array_int1, array_int2) {
         else {
             left = i + 1;
         }
-        console.log(array_int1[i] + array_int2[j])
+        
     }
 }
-console.log(total + half)
+findMedian(array_int1, array_int2)
 
 
 
