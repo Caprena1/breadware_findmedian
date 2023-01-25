@@ -51,7 +51,7 @@ function findMedian(array_int1, array_int2) {
         let array_int1_right = array_int1[i + 1]; 
         let array_int2_left = array_int2[j]; 
         let array_int2_right = array_int2[j + 1]; 
-        
+        console.log(array_int1_left / 2 + array_int1_right / 2)
         if(array_int1_left <= array_int2_right && array_int2_left <= array_int1_right) {
             //IF ODD
             if(total % 2) {
@@ -59,7 +59,7 @@ function findMedian(array_int1, array_int2) {
             }
             //IF EVEN
             else {
-                return(array_int1_left.max, array_int2_left.max + array_int1_right.min, array_int2_right.min) / 2;
+                return(array_int1_left, array_int2_left + array_int1_right, array_int2_right) / 2;
             }
         }
         else if(array_int1_left > array_int2_right){
@@ -68,10 +68,10 @@ function findMedian(array_int1, array_int2) {
         else {
             left = i + 1;
         }
-        console.log(array_int1[i] + array_int2[j])
+        
     }
 }
-console.log(total + half)
+findMedian(array_int1, array_int2)
 
 
 
